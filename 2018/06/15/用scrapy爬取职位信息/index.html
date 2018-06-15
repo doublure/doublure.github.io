@@ -1,0 +1,1150 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="爬虫,Scrapy," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="​">
+<meta name="keywords" content="爬虫,Scrapy">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用scrapy爬取职位信息">
+<meta property="og:url" content="http://yoursite.com/2018/06/15/用scrapy爬取职位信息/index.html">
+<meta property="og:site_name" content="Doublure的博客">
+<meta property="og:description" content="​">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-06-15T13:42:34.392Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="用scrapy爬取职位信息">
+<meta name="twitter:description" content="​">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"right","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/06/15/用scrapy爬取职位信息/"/>
+
+
+
+
+
+  <title>用scrapy爬取职位信息 | Doublure的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Doublure的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">爱折腾的人生</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off"
+             placeholder="搜索..." spellcheck="false"
+             type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/15/用scrapy爬取职位信息/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Doublure">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Doublure的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">用scrapy爬取职位信息</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-15T21:36:02+08:00">
+                2018-06-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>​    </p>
+<a id="more"></a>
+<p>新开一篇，来讲解一个<code>51JOB</code>工作职位的爬取。<br>目标：<br>爬取<code>51JOB</code>上所有与化工相关的职位信息。  </p>
+<p>工具：<br><code>scrapy</code>框架+<code>Python3</code>  </p>
+<h2 id="第一步：安装环境"><a href="#第一步：安装环境" class="headerlink" title="第一步：安装环境"></a>第一步：安装环境</h2><p>使用：  </p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">virtualenv -<span class="selector-tag">p</span> /usr/bin/python3 scrapy_env</span><br></pre></td></tr></table></figure>
+<p>来创建一个新的虚拟环境来运行<code>scrapy</code>  </p>
+<p>cd到<code>scrapy_env</code>文件夹，然后执行下面语句来开启虚拟空间：  </p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~/scrapy_env$ source bin/<span class="built_in">activate</span></span><br></pre></td></tr></table></figure>
+<p>进入到<code>scrapy_env</code>的虚拟空间后，用<code>pip3 install scrapy</code>来安装<code>scrapy</code>所需要的依赖  </p>
+<h2 id="创建Scrapy项目"><a href="#创建Scrapy项目" class="headerlink" title="创建Scrapy项目"></a>创建<code>Scrapy</code>项目</h2><p>使用<code>scrapy startproject</code>来创建项目。   </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$ scrapy startproject 51job</span><br><span class="line">Error: Project names must <span class="keyword">begin</span> <span class="keyword">with</span> a letter <span class="keyword">and</span> contain <span class="keyword">only</span></span><br><span class="line">letters, numbers <span class="keyword">and</span> underscores</span><br><span class="line">~$ scrapy startproject jobs</span><br><span class="line"><span class="keyword">New</span> Scrapy <span class="keyword">project</span> <span class="string">'jobs'</span>, <span class="keyword">using</span> <span class="keyword">template</span> <span class="keyword">directory</span> <span class="string">'/home/ubuntu/scrapy_env/lib/python3.5/site-packages/scrapy/templates/project'</span>, created <span class="keyword">in</span>:</span><br><span class="line">    /home/ubuntu/jobs</span><br><span class="line"></span><br><span class="line">You can <span class="keyword">start</span> your <span class="keyword">first</span> spider <span class="keyword">with</span>:</span><br><span class="line">    cd jobs</span><br><span class="line">    scrapy genspider example example.com</span><br></pre></td></tr></table></figure>
+<p>然后使用<code>scrapy genspider</code>来创建一个爬虫  </p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">~/jobs$ scrapy genspider JobSpider search.<span class="number">51</span>job.com</span><br><span class="line">Created spider <span class="string">'JobSpider'</span> using template <span class="string">'basic'</span> <span class="keyword">in</span> module:</span><br><span class="line">  jobs<span class="selector-class">.spiders</span><span class="selector-class">.JobSpider</span></span><br></pre></td></tr></table></figure>
+<p>这样，项目的框架就搭好了。现在整个项目的目录文件应该是这样子的：  </p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── jobs</span><br><span class="line">│   ├── __init__.py</span><br><span class="line">│   ├── items.py</span><br><span class="line">│   ├── middlewares.py</span><br><span class="line">│   ├── pipelines.py</span><br><span class="line">│   ├── __pycache__</span><br><span class="line">│   │   ├── __init__<span class="selector-class">.cpython-35</span><span class="selector-class">.pyc</span></span><br><span class="line">│   │   └── settings<span class="selector-class">.cpython-35</span><span class="selector-class">.pyc</span></span><br><span class="line">│   ├── settings.py</span><br><span class="line">│   └── spiders</span><br><span class="line">│       ├── __init__.py</span><br><span class="line">│       ├── JobSpider.py</span><br><span class="line">│       └── __pycache__</span><br><span class="line">└── scrapy.cfg</span><br></pre></td></tr></table></figure>
+<h2 id="编辑Scrapy文件"><a href="#编辑Scrapy文件" class="headerlink" title="编辑Scrapy文件"></a>编辑<code>Scrapy</code>文件</h2><p><code>Scrapy</code>框架极大程度的减少了我们爬虫额代码编写量。对于一个简单的爬虫，我们只需要修改下面几个内容。 </p>
+<p>首次得打开网页链接：<br><figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">http<span class="variable">s:</span>//<span class="built_in">search</span>.<span class="number">51</span>job.<span class="keyword">com</span>/<span class="keyword">list</span>/<span class="number">000000</span>,<span class="number">000000</span>,<span class="number">0000</span>,<span class="number">19</span>,<span class="number">9</span>,<span class="number">99</span>,%<span class="number">2</span>B,<span class="number">2</span>,<span class="number">1</span>.html?lang=<span class="keyword">c</span>&amp;stype=<span class="number">1</span>&amp;postchannel=<span class="number">0000</span>&amp;workyear=<span class="number">99</span>&amp;cotype=<span class="number">99</span>&amp;degreefrom=<span class="number">99</span>&amp;jobterm=<span class="number">99</span>&amp;companysize=<span class="number">99</span>&amp;lonlat=<span class="number">0</span>%<span class="number">2</span>C0&amp;radius=-<span class="number">1</span>&amp;ord_field=<span class="number">0</span>&amp;confirmdate=<span class="number">9</span>&amp;fromType=<span class="number">1</span>&amp;dibiaoid=<span class="number">0</span>&amp;address=&amp;<span class="built_in">line</span>=&amp;specialarea=<span class="number">00</span>&amp;from=&amp;welfare=</span><br></pre></td></tr></table></figure></p>
+<h3 id="items-py"><a href="#items-py" class="headerlink" title="items.py"></a><code>items.py</code></h3><p>我们需要获取的每一条招聘内容包括了下面这些信息：  </p>
+<ul>
+<li>职位名</li>
+<li>公司名</li>
+<li>工作地点</li>
+<li>薪资</li>
+<li>发布时间<br>因此，我们需要根据这些来定义一个<code>Item</code>，也就是一条爬取下来的信息。  </li>
+</ul>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import <span class="keyword">scrapy</span></span><br><span class="line"><span class="keyword"></span></span><br><span class="line"><span class="keyword">class </span><span class="keyword">JobsItem(scrapy.Item):</span></span><br><span class="line"><span class="keyword"> </span>   <span class="comment"># define the fields for your item here like:</span></span><br><span class="line">    <span class="comment"># name = scrapy.Field()</span></span><br><span class="line">    <span class="keyword">job_title </span>= <span class="keyword">scrapy.Field()</span></span><br><span class="line"><span class="keyword"> </span>   company = <span class="keyword">scrapy.Field()</span></span><br><span class="line"><span class="keyword"> </span>   <span class="keyword">job_href </span>= <span class="keyword">scrapy.Field()</span></span><br><span class="line"><span class="keyword"> </span>   location = <span class="keyword">scrapy.Field()</span></span><br><span class="line"><span class="keyword"> </span>   salary = <span class="keyword">scrapy.Field()</span></span><br><span class="line"><span class="keyword"> </span>   post_date = <span class="keyword">scrapy.Field()</span></span><br></pre></td></tr></table></figure>
+<p>这就好了，讲白了，我们是定义了一个名字叫<code>JobItem</code>的字典，然后给这个字典定义了5个键。  </p>
+<h3 id="spiders-JobSpider-py"><a href="#spiders-JobSpider-py" class="headerlink" title="spiders/JobSpider.py"></a><code>spiders/JobSpider.py</code></h3><p>确定了我们要获取的信息，我们就可以处理爬虫了。  </p>
+<p>爬取51job其实非常简单，我们只需要输入指定的关键字，然后点搜索，把返回的网页网址作为起始网址即可。  </p>
+<p>然后要遵循下面的这个思路：</p>
+<ul>
+<li>爬某个页面</li>
+<li>把我们所需要的字段信息装载到<code>item</code>里，后面我们要通过<code>pipeline</code>来进行处理</li>
+<li>找到<code>下一页</code>的<code>anchor</code>标签的链接地址</li>
+<li>如果能找到<code>下一页</code>的话，就递归回到第一步</li>
+</ul>
+<p>在解析页面的时候，需要用到<code>scrapy</code>的<code>selector</code>对象的<code>xpath</code>方法。<code>xpath</code>相对于<code>css</code>选择器来说更加复杂一些，但解析效率更高。  </p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> scrapy</span><br><span class="line"><span class="keyword">from</span> jobs.items <span class="keyword">import</span> JobsItem</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">JobspiderSpider</span><span class="params">(scrapy.Spider)</span>:</span></span><br><span class="line">    name=<span class="string">'jobspider'</span></span><br><span class="line">    allowed_domains = [<span class="string">'search.51job.com'</span>]</span><br><span class="line">    start_urls = [</span><br><span class="line">        <span class="string">'http://search.51job.com/list/000000,000000,0000,19,9,99,%2B,2,1.html?lang=c&amp;stype=1&amp;postchannel=0000&amp;workyear=99&amp;cotype=99&amp;degreefrom=99&amp;jobterm=99&amp;companysize=99&amp;lonlat=0%2C0&amp;radius=-1&amp;ord_field=0&amp;confirmdate=9&amp;fromType=1&amp;dibiaoid=0&amp;address=&amp;line=&amp;specialarea=00&amp;from=&amp;welfare='</span>]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">parse</span><span class="params">(self, response)</span>:</span></span><br><span class="line"></span><br><span class="line">        next_page_url = response.xpath(<span class="string">'//li[@class="bk"][2]/a/@href'</span>)</span><br><span class="line">        job_list = response.xpath(<span class="string">'//*[@id="resultList"]/div[@class="el"]'</span>)</span><br><span class="line">        <span class="keyword">for</span> each_job <span class="keyword">in</span> job_list:</span><br><span class="line">            job_info = JobsItem()</span><br><span class="line">            job_info[<span class="string">'job_title'</span>] = each_job.xpath(<span class="string">'.//p[contains(@class,"t1")]/span/a/text()'</span>)</span><br><span class="line">            job_info[<span class="string">'company'</span>] = each_job.xpath(<span class="string">'.//span[contains(@class,"t2")]/a/text()'</span>)</span><br><span class="line">            job_info[<span class="string">'job_href'</span>] = each_job.xpath(<span class="string">'.//span[contains(@class,"t2")]/a/@href'</span>)</span><br><span class="line">            job_info[<span class="string">'location'</span>] = each_job.xpath(<span class="string">'.//span[contains(@class,"t3")]/text()'</span>)</span><br><span class="line">            job_info[<span class="string">'salary'</span>] = each_job.xpath(<span class="string">'.//span[contains(@class,"t4")]/text()'</span>)</span><br><span class="line">            job_info[<span class="string">'post_date'</span>] = each_job.xpath(<span class="string">'.//span[contains(@class,"t5")]/text()'</span>) <span class="comment"># mm-dd</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> k, v <span class="keyword">in</span> job_info.items():</span><br><span class="line">                <span class="keyword">if</span> v:</span><br><span class="line">                    job_info[k] = v.extract_first().strip()</span><br><span class="line">                <span class="keyword">else</span>:</span><br><span class="line">                    job_info[k] = <span class="string">'unknown'</span></span><br><span class="line">            <span class="keyword">yield</span> job_info</span><br><span class="line">        <span class="keyword">if</span> next_page_url <span class="keyword">is</span> <span class="keyword">not</span> <span class="keyword">None</span>:</span><br><span class="line">            abs_url = next_page_url.extract_first().strip()</span><br><span class="line">            <span class="keyword">yield</span> response.follow(abs_url, callback=self.parse)</span><br></pre></td></tr></table></figure>
+<h3 id="pipelines-py"><a href="#pipelines-py" class="headerlink" title="pipelines.py"></a><code>pipelines.py</code></h3><p><code>pipelines</code>用来处理<code>scrapy</code>爬取完页面然后解析出来的<code>item</code>。可以这么理解，<code>pipelines</code>把<code>item</code>处理完之后，会装入到数据库里去。<br>在这里，我们要把数据装入到<code>MYSQL</code>数据库里，并且先不考虑去重等要求。  </p>
+<blockquote>
+<p>这需要在<code>MySQL</code>中先建立好<code>DATABASE</code>以及<code>TABLE</code>。</p>
+</blockquote>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># -*- coding: utf-8 -*-</span></span><br><span class="line">import pymysql</span><br><span class="line">import datetime</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">JobsPipeline</span>(<span class="title">object</span>):</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">open_spider</span><span class="params">(<span class="keyword">self</span>, spider)</span></span><span class="symbol">:</span></span><br><span class="line">        <span class="keyword">self</span>.database = pymysql.connect(host=<span class="string">'localhost'</span>,</span><br><span class="line">                                  port=<span class="number">3306</span>,</span><br><span class="line">                                  user=<span class="string">'xxxxxx'</span>,</span><br><span class="line">                                  passwd=<span class="string">'xxxxxx'</span>,</span><br><span class="line">                                  db=<span class="string">'job_info'</span>,</span><br><span class="line">                                  charset=<span class="string">'utf8'</span>)</span><br><span class="line">        <span class="keyword">self</span>.cursor = <span class="keyword">self</span>.database.cursor()</span><br><span class="line">        <span class="keyword">self</span>.table = <span class="string">'jobs'</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">process_item</span><span class="params">(<span class="keyword">self</span>, item, spider)</span></span><span class="symbol">:</span></span><br><span class="line"></span><br><span class="line">        sql_string = <span class="string">'INSERT INTO &#123;&#125; (job_title, company, job_href, location, salary, post_date, update_datetime)  \</span></span><br><span class="line"><span class="string">                VALUES("&#123;&#125;","&#123;&#125;","&#123;&#125;","&#123;&#125;","&#123;&#125;","&#123;&#125;",str_to_date("&#123;&#125;","%Y-%m-%d %H:%i:%s"));'</span> \</span><br><span class="line">            .format(<span class="keyword">self</span>.table, item[<span class="string">'job_title'</span>], item[<span class="string">'company'</span>], item[<span class="string">'job_href'</span>],</span><br><span class="line">                    item[<span class="string">'location'</span>], item[<span class="string">'salary'</span>], item[<span class="string">'post_date'</span>],</span><br><span class="line">                    datetime.datetime.now().strftime(<span class="string">'%Y-%m-%d %H:%M:%S'</span>))</span><br><span class="line">        <span class="symbol">try:</span></span><br><span class="line">            <span class="keyword">self</span>.cursor.execute(sql_string)</span><br><span class="line">            <span class="keyword">self</span>.database.commit()</span><br><span class="line">        <span class="symbol">except:</span></span><br><span class="line">            print(<span class="string">'error'</span>)</span><br><span class="line">            <span class="keyword">self</span>.database.rollback()</span><br><span class="line">        <span class="keyword">return</span> item</span><br></pre></td></tr></table></figure>
+<h3 id="settings-py"><a href="#settings-py" class="headerlink" title="settings.py"></a><code>settings.py</code></h3><p>完成上面的处理之后，我们还需要做最后一步，修改<code>settings.py</code>，也就是项目设置。  </p>
+<p>最主要的是两件事情：  </p>
+<ul>
+<li>设置默认的请求头<br>设置默认的请求头很简单，只需要找到，修改为下面的内容即可。  </li>
+</ul>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">DEFAULT_REQUEST_HEADERS = &#123;</span><br><span class="line">    'Accept':'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',</span><br><span class="line">    'Accept-Language': 'en-US,en;q=0.9',</span><br><span class="line">    'Connection':'keep-alive',</span><br><span class="line">    'Cookie':'your-cookie-here',</span><br><span class="line">    'Host':'search.51job.com',</span><br><span class="line">    'Referer':'http://search.51job.com/list/<span class="number">000000</span>,<span class="number">000000</span>,<span class="number">0000</span>,19,9,99,%2B,2,2.html?lang=c&amp;stype=1&amp;postchannel=<span class="number">0000</span>&amp;workyear=99&amp;cotype=99&amp;degreefrom=99&amp;jobterm=99&amp;companysize=99&amp;lonlat=0%2C0&amp;radius=-1&amp;ord_field=0&amp;confirmdate=9&amp;fromType=1&amp;dibiaoid=0&amp;address=&amp;line=&amp;specialarea=00&amp;from=&amp;welfare=%27',</span><br><span class="line">    'Upgrade-Insecure-Requests':'1',</span><br><span class="line">    'User-Agent':'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ubuntu Chromium/65.0.<span class="number">3325.18</span>1 Chrome/65.0.<span class="number">3325.18</span>1 Safari/537.36',</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>那上面这些内容是从哪来的呢？当然是从<code>Chrome</code>浏览器的<code>Request Headers</code>的信息拿出来的。  </p>
+<ul>
+<li>开启<code>pipelines</code><br>这个也很简单，把下面这句取消注释即可。  <figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ITEM_PIPELINES = &#123;</span><br><span class="line">   'jobs.pipelines.JobsPipeline': 300,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="最终运行"><a href="#最终运行" class="headerlink" title="最终运行"></a>最终运行</h2><p>cd到项目的根目录下，注意一定要是根目录，然后执行：  </p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">scrapy crawl jobspider</span></span><br></pre></td></tr></table></figure>
+<p>至此，一个最简单的<code>Scrapy</code>爬虫就写好了。<br>后期还有很多细节要处理，比如数据去重，异常处理，数据分析等等，不过这些我们可以在后面优化，后面我们也会陆续讲解。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/爬虫/" rel="tag"># 爬虫</a>
+          
+            <a href="/tags/Scrapy/" rel="tag"># Scrapy</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Doublure</p>
+              <p class="site-description motion-element" itemprop="description">记录自己的所做，所想，所学</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:doublure@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i></a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                友情链接
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="" title="网站1" target="_blank">网站1</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一步：安装环境"><span class="nav-number">1.</span> <span class="nav-text">第一步：安装环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建Scrapy项目"><span class="nav-number">2.</span> <span class="nav-text">创建Scrapy项目</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编辑Scrapy文件"><span class="nav-number">3.</span> <span class="nav-text">编辑Scrapy文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#items-py"><span class="nav-number">3.1.</span> <span class="nav-text">items.py</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#spiders-JobSpider-py"><span class="nav-number">3.2.</span> <span class="nav-text">spiders/JobSpider.py</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pipelines-py"><span class="nav-number">3.3.</span> <span class="nav-text">pipelines.py</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#settings-py"><span class="nav-number">3.4.</span> <span class="nav-text">settings.py</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最终运行"><span class="nav-number">4.</span> <span class="nav-text">最终运行</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Doublure</span>
+
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Pisces</a></div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>;
+	<script>
+	$("body").backstretch("../source/images/galaxy.jpg");
+	</script>
+</body>
+</html>
