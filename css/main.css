@@ -1830,7 +1830,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff75ff;
+  background: #ff04ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3024,4 +3024,10 @@ pre {
 code,
 pre {
   border: 1px solid #d6d6d6;
+}
+#posts p {
+  margin-bottom: 0px;
+}
+div.post-button.text-center {
+  margin-top: 0px;
 }
