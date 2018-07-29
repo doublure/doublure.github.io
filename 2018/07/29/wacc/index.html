@@ -73,7 +73,7 @@
 
 
 
-  <meta name="keywords" content="Excel," />
+  <meta name="keywords" content="资本成本,财务分析," />
 
 
 
@@ -84,23 +84,20 @@
 
 
 
-<meta name="description" content="复利的极限在哪里？">
-<meta name="keywords" content="Excel">
+<meta name="description" content="终于能计算出真正的资本成本了">
+<meta name="keywords" content="资本成本,财务分析">
 <meta property="og:type" content="article">
-<meta property="og:title" content="连续复利的计算">
-<meta property="og:url" content="https://doublure.github.io/2018/06/25/continuous-compounding/index.html">
+<meta property="og:title" content="计算加权平均资本成本">
+<meta property="og:url" content="https://doublure.github.io/2018/07/29/wacc/index.html">
 <meta property="og:site_name" content="Doublure的博客">
-<meta property="og:description" content="复利的极限在哪里？">
+<meta property="og:description" content="终于能计算出真正的资本成本了">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180625/jf788E778B.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180625/2iji6i1lll.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180625/5Dgaj3dh2L.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180625/Ji48B9L63K.png?imageslim">
-<meta property="og:updated_time" content="2018-06-25T13:42:41.965Z">
+<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180729/J6AfFiKbHB.png?imageslim">
+<meta property="og:updated_time" content="2018-07-29T14:28:21.920Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="连续复利的计算">
-<meta name="twitter:description" content="复利的极限在哪里？">
-<meta name="twitter:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180625/jf788E778B.png?imageslim">
+<meta name="twitter:title" content="计算加权平均资本成本">
+<meta name="twitter:description" content="终于能计算出真正的资本成本了">
+<meta name="twitter:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180729/J6AfFiKbHB.png?imageslim">
 
 
 
@@ -130,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="https://doublure.github.io/2018/06/25/continuous-compounding/"/>
+  <link rel="canonical" href="https://doublure.github.io/2018/07/29/wacc/"/>
 
 
 
 
 
-  <title>连续复利的计算 | Doublure的博客</title>
+  <title>计算加权平均资本成本 | Doublure的博客</title>
   
 
 
@@ -297,7 +294,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://doublure.github.io/2018/06/25/continuous-compounding/">
+    <link itemprop="mainEntityOfPage" href="https://doublure.github.io/2018/07/29/wacc/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Doublure">
@@ -314,7 +311,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">连续复利的计算</h1>
+          <h1 class="post-title" itemprop="name headline">计算加权平均资本成本</h1>
         
 
         <div class="post-meta">
@@ -326,8 +323,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-06-25T21:39:17+08:00">
-                2018-06-25
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-07-29T22:21:31+08:00">
+                2018-07-29
               </time>
             
 
@@ -366,7 +363,7 @@
 
           
           
-             <span id="/2018/06/25/continuous-compounding/" class="leancloud_visitors" data-flag-title="连续复利的计算">
+             <span id="/2018/07/29/wacc/" class="leancloud_visitors" data-flag-title="计算加权平均资本成本">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -391,7 +388,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  373
+                  717
                 </span>
               
 
@@ -403,7 +400,7 @@
 
           
               <div class="post-description">
-                  复利的极限在哪里？
+                  终于能计算出真正的资本成本了
               </div>
           
 
@@ -420,23 +417,27 @@
       
 
       
-        <p>​    </p>
-<a id="more"></a>
-<p>我们前面说过，时间是投资的朋友，其实也就是说，复利可以生成更多的终值。<br>如果现在银行定期的年存款利率为5%，并且你计划存12000块到银行存款。现在有两家银行可选，一家银行半年结一次息，另外一家银行3个月结一次息。如果想到年底获得最大的终值，应该怎么选呢？  </p>
-<p>前面我们说过，终值的计算公式是这样子的：  </p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/180625/jf788E778B.png?imageslim" alt="mark">  </p>
+        <p>​    <a id="more"></a></p>
+<h2 id="前文回顾"><a href="#前文回顾" class="headerlink" title="前文回顾"></a>前文回顾</h2><p>前面我们花相当的篇幅研究了个别资本成本，也就是长期借款，债券，普通股和优先股的资本成本。  </p>
+<p>有了个别资本成本之后，我们当然不能简单的把资本成本加起来求算术平均，不然就会得到类似于郭敬明和姚明的平均身高为一米八的滑稽结果。  </p>
+<p>试想这样一种情况，你今年正在进行理财，余额宝投入10万，年化收益3%，银行理财投20万，年化收益为5%， P2P投入10万，年化收益为10%。<br>问：一年下来总的年化收益为多少？  </p>
+<p>我相信大家都不会简单的把3个年化收益相加求平均，得到6%的答案。因为，每个理财的投放额的权重是不一样的，对最终年化收益的贡献也不同。  </p>
+<p>对于资本成本也是一样，若要求真正的资本成本，我们得先知道，每一项资本的权重是多少。  </p>
+<h2 id="权重的确定"><a href="#权重的确定" class="headerlink" title="权重的确定"></a>权重的确定</h2><p>确定每一项资本的权重，一般有3种方法  </p>
+<h3 id="账面价值权重"><a href="#账面价值权重" class="headerlink" title="账面价值权重"></a>账面价值权重</h3><p>反映的是每一项资本在入账时，记录的资本价值。<br>例如，如果发行了1万股的普通股，每股发行价为10元，那么普通股账面价值就是10万元。  </p>
+<p>那么问题来了，像普通股这种东西是可以交易的，会有一个市场公允价格，如果后面股价从10元涨到了20元，那么很明显，普通股的资本成本在实际的资本中所占的比例要高了。  </p>
+<p>因此，账面价值权重只是反映了一个历史权重。  </p>
+<h3 id="市场价值权重"><a href="#市场价值权重" class="headerlink" title="市场价值权重"></a>市场价值权重</h3><p>如上面所说，市场价值权重可以反映市场运行当中公司真正的资本成本。  </p>
+<p>市场价值权重需要先把各项资本按照市场价值来进行计算，然后得到相应的权重比例。  </p>
+<h3 id="目标资本结构权重"><a href="#目标资本结构权重" class="headerlink" title="目标资本结构权重"></a>目标资本结构权重</h3><p>公司在经营的时候，很有可能已经事先根据市场测算出了一个最优的权重，使得资本成本得到最优解。随着市场的进行，管理层很有可能会朝着这个方向努力，达到最优的资本权重。  </p>
+<p>因此，也可以根据目标资本权重来确定各项资本的权重。  </p>
+<h2 id="WACC"><a href="#WACC" class="headerlink" title="WACC"></a>WACC</h2><p>有了个别资本成本，以及对应的权重之后，我们就可以计算加权平均资本成本了。计算公式很简单：  </p>
+<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/180729/J6AfFiKbHB.png?imageslim" alt="mark"></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>至此，不考虑发行成本的资本成本的计算就可以计算出来了。  </p>
+<p>后期还可以再深入的内容有：  </p>
 <ul>
-<li>其中i是年华利率  </li>
-<li>n是以年计算的期数</li>
-</ul>
-<p>如果把一年分成m期，那么每期的收益率就变成了i/m,总共的期数就变成了nm。上面的公式就变成了：  </p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/180625/2iji6i1lll.png?imageslim" alt="mark">  </p>
-<p>假设银行允许你极限操作，每年可以分成的期数m允许为无穷大，我们队上面公式求个极限：  </p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/180625/5Dgaj3dh2L.png?imageslim" alt="mark"></p>
-<p>也就是说，在每年可以分成无穷多期的情况下，每年的收益可以逼近<code>e^i-1</code>  </p>
-<p>最后，我们用Excel来模拟一下一年分成多期的情况。下面这个图列出了每年分的期数，以及对应的终值。可以看得出来，期数越多，终值是越高的。不过貌似分52期和分一期最后只差了0.1%，资金量小的时候，差别不大，但当资金量大的时候，这0.1%还是很可观的。<br><img src="http://pah1qyen2.bkt.clouddn.com/blog/180625/Ji48B9L63K.png?imageslim" alt="mark">  </p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
-<li><code>e^i-1</code>这个极限值要记住</li>
+<li>考虑发行成本</li>
+<li>考虑边际资本成本（阶梯函数）</li>
 </ul>
 
       
@@ -458,7 +459,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://doublure.github.io/2018/06/25/continuous-compounding/" title="连续复利的计算">https://doublure.github.io/2018/06/25/continuous-compounding/</a>
+    <a href="https://doublure.github.io/2018/07/29/wacc/" title="计算加权平均资本成本">https://doublure.github.io/2018/07/29/wacc/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -473,7 +474,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Excel/" rel="tag"><i class="fa fa-tag"></i> Excel</a>
+            <a href="/tags/资本成本/" rel="tag"><i class="fa fa-tag"></i> 资本成本</a>
+          
+            <a href="/tags/财务分析/" rel="tag"><i class="fa fa-tag"></i> 财务分析</a>
           
         </div>
       
@@ -486,8 +489,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/25/growing-annuities/" rel="next" title="递增年金的终值和现值">
-                <i class="fa fa-chevron-left"></i> 递增年金的终值和现值
+              <a href="/2018/07/29/cost-of-debt/" rel="next" title="债务成本的计算">
+                <i class="fa fa-chevron-left"></i> 债务成本的计算
               </a>
             
           </div>
@@ -496,8 +499,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/07/04/balance-sheet/" rel="prev" title="财务报表之资产负债表">
-                财务报表之资产负债表 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/07/29/cost-of-capital-mindmap/" rel="prev" title="资本成本脑图">
+                资本成本脑图 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -664,7 +667,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前文回顾"><span class="nav-number">1.</span> <span class="nav-text">前文回顾</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#权重的确定"><span class="nav-number">2.</span> <span class="nav-text">权重的确定</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#账面价值权重"><span class="nav-number">2.1.</span> <span class="nav-text">账面价值权重</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#市场价值权重"><span class="nav-number">2.2.</span> <span class="nav-text">市场价值权重</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目标资本结构权重"><span class="nav-number">2.3.</span> <span class="nav-text">目标资本结构权重</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WACC"><span class="nav-number">3.</span> <span class="nav-text">WACC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
