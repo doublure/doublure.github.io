@@ -3,6 +3,29 @@
   
     
     <entry>
+      <title>资本预算</title>
+      <link href="/2018/07/31/capital-budgeting/"/>
+      <url>/2018/07/31/capital-budgeting/</url>
+      <content type="html"><![CDATA[<p>​     </p><a id="more"></a><h2 id="什么是资本预算"><a href="#什么是资本预算" class="headerlink" title="什么是资本预算"></a>什么是资本预算</h2><p>在企业报表的部分我们说过，企业主要是在做经营，投资和筹资三件事情。筹资，和我们资本成本有很大关系。既然筹到了资，那么一定需要把资产投出去，让他变成更多的资本。  </p><p>在企业投资的时候，当然要事先考量投资的收益以及自己的成本。只有在收益大于投资的时候，企业才有动力去投资。  </p><p>资本预算就是主要服务与此。简单点讲，资本预算就是企业确定投资预期收益，并决策是否到底要投资的一种方法。  </p><h2 id="如何进行资本预算"><a href="#如何进行资本预算" class="headerlink" title="如何进行资本预算"></a>如何进行资本预算</h2><p>在资本预算的过程中，公司最关注的还是投资的项目是否能够产生现金流入。从股东的层面上来讲，只有账面有现金，才能有钱分红。一般来说，单个项目的资本预算可以这样来做：  </p><ol><li>确定现金流</li><li>根据现金流进行决策  </li></ol><h2 id="确定现金流"><a href="#确定现金流" class="headerlink" title="确定现金流"></a>确定现金流</h2><p>资本预算里对其所关心的现金流有这么几个要求：  </p><ul><li>增量现金流<br>如果新项目和老项目的产品存在相互替代，那么资本预算只考虑多出来的那部分现金流。  </li><li>税后现金流<br>毕竟，所需要交的税是不属于公司的，公司只考虑税后现金流。  </li></ul><p>对于现金流，还有几点：  </p><ul><li><p>不考虑沉没成本<br>对于一笔钱来说，不管新项目上还是不上，都必须要花的话，那么他就是沉没成本。资本预算是不予以考虑的。  </p></li><li><p>不考虑融资成本<br>这个也不难理解，资本预算是先考虑收益，然后再对比成本。<br>融资成本实在资本成本那里计算的，并不在资本预算的现金流范围之内。  </p></li></ul><h3 id="现金流分类"><a href="#现金流分类" class="headerlink" title="现金流分类"></a>现金流分类</h3><p>对于一个项目来说，现金流按照项目的推进一般分三类：  </p><h4 id="初始投资-IO"><a href="#初始投资-IO" class="headerlink" title="初始投资(IO)"></a>初始投资(IO)</h4><p>Initial Outlay，表示公司在项目初期需要投入的现金流。这个现金流主要包括以下几个部分：  </p><ol><li>项目的价格（例如设备费用）</li><li>运输费，安装费，培训费</li></ol><p>以上两个项目需要都计入折旧基础，也就是说，折旧其实不仅仅只包括固定资产自身的价格，也包括与固定资产相关联的附加费用。  </p><ol start="3"><li>原有设备的残值</li></ol><p>上了新的项目，旧的机器还是有残值的。因此，残值相当于是现金流的流入。不过，如果机器的残值和账面价值不同，那么就会附带有税收影响。  </p><p>例如，一台机器原价100万，预期使用10年。用线性折旧5年之后，以60万的价格卖出，税率是25%。<br>对于这种情况，使用5年后，机器的账面价格为50万，而以60万售出，税前现金流增加了10万，而这10万需要付25%的税，因此，税后的现金流增加值为<code>10*（1-0.25）= 7.5</code>万  </p><ol start="4"><li>营运资本的变动<br>如果新项目投入后，需要增加净营运资本，那么营运资本的增加值也应当被计入初始投资里。  </li></ol><p>综上所述，初始投资IO的计算公式为：  </p><figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">初始投资 = </span><br><span class="line">项目价格</span><br><span class="line"><span class="addition">+相关费用(运输，安装，培训)</span></span><br><span class="line"><span class="deletion">-残值</span></span><br><span class="line"><span class="addition">+处理残值带来的税费</span></span><br><span class="line"><span class="addition">+净营运资本的增加</span></span><br></pre></td></tr></table></figure><h4 id="年度税后现金流-ATCF"><a href="#年度税后现金流-ATCF" class="headerlink" title="年度税后现金流(ATCF)"></a>年度税后现金流(ATCF)</h4><p>ATCF考察的是项目在运转后，每年的现金流回报。ATCF一般包括几个现金流组成部分：  </p><ol><li>收入增加<br>这个并不难理解，注意这个收入增加是净增加额</li><li>成本节约<br>如果上一个项目，能让以后少花钱，也是可以考虑的。</li><li>附加费用<br>如果投入了新的项目导致人工维修等费用增加的话，这部分费用需要在现金流中扣除。  </li></ol><p>不难看出，上面这3个部分都属于税前现金流的增加。需要扣除税率，来得到税后现金流。  </p><ol start="4"><li>净营运资本变化<br>和初始投资IO一样，每年净运营资本可能因为很多原因发生变化，最典型的就是通货膨胀了。所以，也需要把经运营资本的变化也考虑在内。   </li></ol><p>净运营资本的增加使用的是税后的现金流，因此不需要用税率进行调整。  </p><ol start="5"><li>折旧收益<br>折旧收益是很容易被忽视的一项影响现金流的项目。因为折旧是非现金费用，是税前扣除的，因此也具有税盾的作用。<br>那么这个税盾的值是多少呢？<br>就直接用今年相对于去年折旧费用的增加量，乘上税率就可以。  </li></ol><p>综合上面5点，我们可以计算出税后的年度税后现金流为：  </p><figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">年度税后现金流=  </span><br><span class="line"></span><br><span class="line">(附加收入</span><br><span class="line"><span class="addition">+成本节约</span></span><br><span class="line"><span class="deletion">-附加费用)*(1-税率)</span></span><br><span class="line"><span class="deletion">-净营运资本的增加</span></span><br><span class="line"><span class="addition">+折旧费用增加*税率</span></span><br></pre></td></tr></table></figure><h4 id="剩余现金流-TCF"><a href="#剩余现金流-TCF" class="headerlink" title="剩余现金流(TCF)"></a>剩余现金流(TCF)</h4><p>在项目末期所产生的现金流。一般包括停产，回收净营运资本，处理残值等等。  </p><figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">剩余现金流=  </span><br><span class="line">净营运资本变化的回收</span><br><span class="line"><span class="addition">+残值</span></span><br><span class="line"><span class="deletion">-(残值-账面价值)*税率</span></span><br><span class="line"><span class="deletion">-停产成本*(1-税率)</span></span><br></pre></td></tr></table></figure><p>确定了每个阶段的现金流之后，我们就可以进行下一步决策了。  </p>]]></content>
+      
+      <categories>
+          
+          <category> 金融 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 资本预算 </tag>
+            
+            <tag> 财务分析 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>资本成本脑图</title>
       <link href="/2018/07/29/cost-of-capital-mindmap/"/>
       <url>/2018/07/29/cost-of-capital-mindmap/</url>
@@ -17,9 +40,9 @@
       
         <tags>
             
-            <tag> 资本成本 </tag>
-            
             <tag> 财务分析 </tag>
+            
+            <tag> 资本成本 </tag>
             
             <tag> 脑图 </tag>
             
@@ -42,9 +65,9 @@
       
         <tags>
             
-            <tag> 资本成本 </tag>
-            
             <tag> 财务分析 </tag>
+            
+            <tag> 资本成本 </tag>
             
         </tags>
       
@@ -65,9 +88,9 @@
       
         <tags>
             
-            <tag> 资本成本 </tag>
-            
             <tag> 财务分析 </tag>
+            
+            <tag> 资本成本 </tag>
             
         </tags>
       
@@ -88,9 +111,9 @@
       
         <tags>
             
-            <tag> 资本成本 </tag>
-            
             <tag> 财务分析 </tag>
+            
+            <tag> 资本成本 </tag>
             
         </tags>
       
