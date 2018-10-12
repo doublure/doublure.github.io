@@ -4,6 +4,46 @@
 
     
   <url>
+    <loc>https://doublure.github.io/2018/10/12/simplex-LP/</loc>
+    <lastmod>2018-10-12T15:30:54.658Z</lastmod>
+    <data>
+        <display>
+        <title>SIMPLEX线性回归算法</title>
+        <pubTime>2018-10-12T15:18:20.000Z</pubTime>
+        
+        <tag>线性回归</tag>
+         
+         
+           
+             
+              <breadCrumb title="Excel" url="https://doublure.github.io/categories/Excel/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://doublure.github.io/2018/10/12/workday/</loc>
+    <lastmod>2018-10-12T15:22:17.833Z</lastmod>
+    <data>
+        <display>
+        <title>计算每月的最后一个工作日</title>
+        <pubTime>2018-10-12T15:18:32.000Z</pubTime>
+        
+        <tag>Excel函数</tag>
+         
+         
+           
+             
+              <breadCrumb title="Excel" url="https://doublure.github.io/categories/Excel/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://doublure.github.io/2018/08/27/capital-structure/</loc>
     <lastmod>2018-08-27T14:30:44.041Z</lastmod>
     <data>
@@ -141,9 +181,9 @@
         <title>单一指数模型的Excel实现</title>
         <pubTime>2018-08-27T14:16:27.000Z</pubTime>
         
-        <tag>单一指数模型</tag>
-         
         <tag>Excel</tag>
+         
+        <tag>单一指数模型</tag>
          
         <tag>金融建模</tag>
          
@@ -253,9 +293,9 @@
         <title>资本预算决策方法</title>
         <pubTime>2018-08-03T14:21:16.000Z</pubTime>
         
-        <tag>资本预算</tag>
-         
         <tag>财务分析</tag>
+         
+        <tag>资本预算</tag>
          
          
            
@@ -275,9 +315,9 @@
         <title>资本预算</title>
         <pubTime>2018-07-31T15:26:01.000Z</pubTime>
         
-        <tag>资本预算</tag>
-         
         <tag>财务分析</tag>
+         
+        <tag>资本预算</tag>
          
          
            
