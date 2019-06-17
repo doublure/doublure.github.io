@@ -92,19 +92,19 @@
 <meta property="og:site_name" content="Doublure的博客">
 <meta property="og:description" content="看看通胀税是怎么收的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180625/H0jej0L3cF.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180625/e9Ih6LEaKc.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180625/GH3ikaKKAC.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180625/emBhmj9cmD.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180625/J61j01di3f.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180625/LHi2Jj197m.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180625/CIeEEdjg62.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180625/A7EAK0ea5h.png?imageslim">
-<meta property="og:updated_time" content="2018-06-25T07:40:13.037Z">
+<meta property="og:image" content="http://www.doublure.cn/blog/180625/H0jej0L3cF.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/180625/e9Ih6LEaKc.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/180625/GH3ikaKKAC.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/180625/emBhmj9cmD.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/180625/J61j01di3f.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/180625/LHi2Jj197m.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/180625/CIeEEdjg62.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/180625/A7EAK0ea5h.png?imageslim">
+<meta property="og:updated_time" content="2019-06-17T14:30:42.033Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="递增年金的终值和现值">
 <meta name="twitter:description" content="看看通胀税是怎么收的">
-<meta name="twitter:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180625/H0jej0L3cF.png?imageslim">
+<meta name="twitter:image" content="http://www.doublure.cn/blog/180625/H0jej0L3cF.png?imageslim">
 
 
 
@@ -429,26 +429,26 @@
 <p>上一篇文章中，我们探讨了货币的时间价值，以及年金在每期数额相等的情况下，所对应的现值和终值。<br>实际情况中，我们也会经常遇到年金不断增长的情况。比如说下面这个例子：<br>现在有一笔钱要存入银行，存款利率为5%。你准备在未来6年每年提出10000块钱用作孩子的学费。然而，学费以每年3%的速度增长。那么，你现在需要存入多少钱才可以？  </p>
 <h2 id="传统数学方法计算现值"><a href="#传统数学方法计算现值" class="headerlink" title="传统数学方法计算现值"></a>传统数学方法计算现值</h2><p>我们假设年金每年的增长率为g(上面例子为3%)<br>投资利率为i(上面例子为5%)<br>起始年金为pmt(上面例子为10000)<br>期数为n(上面例子为6)  </p>
 <p>在这种情况下，年金的示意图为：  </p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/180625/H0jej0L3cF.png?imageslim" alt="mark">  </p>
+<p><img src="http://www.doublure.cn/blog/180625/H0jej0L3cF.png?imageslim" alt="mark">  </p>
 <p>每年年金对应的PV计算如下：  </p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/180625/e9Ih6LEaKc.png?imageslim" alt="mark">  </p>
+<p><img src="http://www.doublure.cn/blog/180625/e9Ih6LEaKc.png?imageslim" alt="mark">  </p>
 <p>把每年的PV相加，利用等比数列的求和公式，就可以得到总的PV  </p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/180625/GH3ikaKKAC.png?imageslim" alt="mark">  </p>
-<p>用Excel来计算如下：<br><img src="http://pah1qyen2.bkt.clouddn.com/blog/180625/emBhmj9cmD.png?imageslim" alt="mark"></p>
+<p><img src="http://www.doublure.cn/blog/180625/GH3ikaKKAC.png?imageslim" alt="mark">  </p>
+<p>用Excel来计算如下：<br><img src="http://www.doublure.cn/blog/180625/emBhmj9cmD.png?imageslim" alt="mark"></p>
 <h2 id="另外一种思路"><a href="#另外一种思路" class="headerlink" title="另外一种思路"></a>另外一种思路</h2><p>这个公式看起来也很复杂，有没有别的思路来看待这个问题呢？   </p>
 <p>如果我们先不考虑年金，只计算单笔资金的情况：  </p>
 <p>n年后，单笔资金的FV为 <code>PV(1+i)^n</code><br>n年后，资金购买力下降（可以理解成通货膨胀），单笔资金因为通货膨胀所造成的贬值因子为：<code>(1+g&gt;^n</code><br>n年后，资金的实际购买力为：<code>PV(1+i)^n/(1+g)^n</code><br>这个公式看起来很眼熟，把他和正常的<code>FV=PV(1+i)^n</code>相比，就相当于是实际的利率为：  </p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/180625/J61j01di3f.png?imageslim" alt="mark"></p>
+<p><img src="http://www.doublure.cn/blog/180625/J61j01di3f.png?imageslim" alt="mark"></p>
 <blockquote>
 <p>题外话：如果你的资产增长率低于通货膨胀率的话，那你的资产增长的实际利率就变成负值，被割韭菜是不可避免了。</p>
 </blockquote>
 <h2 id="使用PV函数计算"><a href="#使用PV函数计算" class="headerlink" title="使用PV函数计算"></a>使用PV函数计算</h2><p>有了实际利率，我们就可以使用Excel自带的PV函数来计算现值了。在计算的时候，还有一点要注意：我们在案例中的PMT是从第一期开始计算的，需要把它修正为第0期。  </p>
 <p>怎么修正呢？直接用第一期的PMT除1+g即可。  </p>
 <p>我们把上面的参数带入到Excel中，就可以直接用PV计算出结果。  </p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/180625/LHi2Jj197m.png?imageslim" alt="mark"></p>
+<p><img src="http://www.doublure.cn/blog/180625/LHi2Jj197m.png?imageslim" alt="mark"></p>
 <h2 id="计算终值"><a href="#计算终值" class="headerlink" title="计算终值"></a>计算终值</h2><p>我们有了上面的现值公式，又知道了现值和终值的关系，所以，直接把现值乘上(1+i)^n即可。<br>于是，终值的公式就成为：  </p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/180625/CIeEEdjg62.png?imageslim" alt="mark">  </p>
-<p>这里要注意的是，不能使用上述计算PV的参数来计算FV。最好的方法，还是把上面的PV计算出来之后，再乘<code>(1+i)^n</code><br><img src="http://pah1qyen2.bkt.clouddn.com/blog/180625/A7EAK0ea5h.png?imageslim" alt="mark">  </p>
+<p><img src="http://www.doublure.cn/blog/180625/CIeEEdjg62.png?imageslim" alt="mark">  </p>
+<p>这里要注意的是，不能使用上述计算PV的参数来计算FV。最好的方法，还是把上面的PV计算出来之后，再乘<code>(1+i)^n</code><br><img src="http://www.doublure.cn/blog/180625/A7EAK0ea5h.png?imageslim" alt="mark">  </p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
 <li>递增年金的概念，以及计算其现值和终值的方法</li>
 </ul>

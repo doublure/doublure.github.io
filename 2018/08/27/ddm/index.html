@@ -92,17 +92,17 @@
 <meta property="og:site_name" content="Doublure的博客">
 <meta property="og:description" content="对股利进行折现">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180808/2E1lHlElLm.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180805/DJc9IbgL45.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180808/9F494Kf6Eh.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180808/DmbL240BEK.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180808/Bg20dL0282.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180808/EC7hac47da.png?imageslim">
-<meta property="og:updated_time" content="2018-08-27T14:22:26.284Z">
+<meta property="og:image" content="http://www.doublure.cn/blog/180808/2E1lHlElLm.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/180805/DJc9IbgL45.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/180808/9F494Kf6Eh.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/180808/DmbL240BEK.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/180808/Bg20dL0282.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/180808/EC7hac47da.png?imageslim">
+<meta property="og:updated_time" content="2019-06-17T14:22:04.061Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DDM估值">
 <meta name="twitter:description" content="对股利进行折现">
-<meta name="twitter:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180808/2E1lHlElLm.png?imageslim">
+<meta name="twitter:image" content="http://www.doublure.cn/blog/180808/2E1lHlElLm.png?imageslim">
 
 
 
@@ -442,16 +442,16 @@
 </ul>
 <p>有了上面三个数据以后，我们就基本可以按照PV-FV的关系来进行折现了。  </p>
 <p>基本的一个公式是：  </p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/180808/2E1lHlElLm.png?imageslim" alt="mark"></p>
+<p><img src="http://www.doublure.cn/blog/180808/2E1lHlElLm.png?imageslim" alt="mark"></p>
 <p>未来的现金流这个东西，基本靠半算半猜(这也是估值的一个最大难点)，靠的是对公司的理解。<br>而折现率相对比较好算，CAPM模型里准备了一个证券市场线SML，可以根据股票的历史β值(当然更精确的是先对历史β值进行校正)，市场的收益rm来计算股票的预期收益。公式如下：  </p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/180805/DJc9IbgL45.png?imageslim" alt="mark"></p>
+<p><img src="http://www.doublure.cn/blog/180805/DJc9IbgL45.png?imageslim" alt="mark"></p>
 <p>求出来折现率之后，我们就假设(注意是假设)我们会知道企业未来的现金流，然后我们就可以引用先人的智慧进行估值了。  </p>
 <h2 id="DDM"><a href="#DDM" class="headerlink" title="DDM"></a>DDM</h2><p>Dividend Discount Model，也就是将未来的股利进行折现。我们前面也说过，普通股的股东主要靠两种方式赚钱：拿股利以及转让股票。转让股票相当于是在期末的一个额外终值，在这里，我们先假设我们要长期持有股票，并不转让（没错，把股票传给下一代。。。），仅从股利的层面来考虑。</p>
 <h3 id="永续增长"><a href="#永续增长" class="headerlink" title="永续增长"></a>永续增长</h3><p>假设第0年的股利为D0，股利以后每年增长g，折现率，也就是普通股的权益成本为k，那么，这就相当于是一个永续增长的年金模型。  </p>
 <p>我们用前面的年金知识，很容易可以得到：  </p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/180808/9F494Kf6Eh.png?imageslim" alt="mark"></p>
+<p><img src="http://www.doublure.cn/blog/180808/9F494Kf6Eh.png?imageslim" alt="mark"></p>
 <p>如果N趋向于无穷大(接盘侠接一辈子盘。。。)，那么这个公式求极限就变成：  </p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/180808/DmbL240BEK.png?imageslim" alt="mark"></p>
+<p><img src="http://www.doublure.cn/blog/180808/DmbL240BEK.png?imageslim" alt="mark"></p>
 <h3 id="两段模型"><a href="#两段模型" class="headerlink" title="两段模型"></a>两段模型</h3><p>上面这个公式看起来很简单，然而，过于理想化。最典型的问题在于，很难保证股利永远维持g增长一辈子。</p>
 <p>于是，为了优化的更实际一点，我们把增长分为2段：</p>
 <ul>
@@ -465,7 +465,7 @@
 <li>第n年的现值再转化成第0年的现值</li>
 </ul>
 <p>综合上面，可以得到(不多做解释了，详情参考货币的时间价值那一章)：  </p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/180808/Bg20dL0282.png?imageslim" alt="mark"></p>
+<p><img src="http://www.doublure.cn/blog/180808/Bg20dL0282.png?imageslim" alt="mark"></p>
 <h3 id="三段模型"><a href="#三段模型" class="headerlink" title="三段模型"></a>三段模型</h3><p>上面这个看起来更合理了，但还是不够现实。因为从g1到g2的转化太过突然，正常情况下应该是缓慢由g1过渡到g2的。 </p>
 <p>于是产生了3段模型：</p>
 <ul>
@@ -473,7 +473,7 @@
 <li>然后增长率线性从g1变化到g2</li>
 <li>从第0年开始，n2年后，增长率变为g2 </li>
 </ul>
-<p>经过推算（反正我是没推算出来），最终的公式应当是：<br><img src="http://pah1qyen2.bkt.clouddn.com/blog/180808/EC7hac47da.png?imageslim" alt="mark"></p>
+<p>经过推算（反正我是没推算出来），最终的公式应当是：<br><img src="http://www.doublure.cn/blog/180808/EC7hac47da.png?imageslim" alt="mark"></p>
 <h2 id="DDM法的问题"><a href="#DDM法的问题" class="headerlink" title="DDM法的问题"></a>DDM法的问题</h2><p>DDM法看起来很有道理，但实际上真正的估值很少用这种方法。就拿中国来说，有几个公司发放股利呢？如果一直不分红，那估值岂不是为0？所以，我们还需要采用其他方法来进行估值。  </p>
 
       

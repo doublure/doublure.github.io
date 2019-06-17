@@ -92,21 +92,21 @@
 <meta property="og:site_name" content="Doublure的博客">
 <meta property="og:description" content="算法优化">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180806/dH9Lg6kkA9.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180806/ElGlhc2j9i.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180806/BbcGd6AHC2.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180806/0lcgLBK2el.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180806/3LaBAB5Ec5.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180806/mcE43Lc9LJ.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180807/jl551k96fJ.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180806/jjG232475A.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180807/I9a8mJi25f.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180807/8mkI0deEhD.png?imageslim">
-<meta property="og:updated_time" content="2018-08-27T14:19:32.524Z">
+<meta property="og:image" content="http://www.doublure.cn/blog/180806/dH9Lg6kkA9.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/180806/ElGlhc2j9i.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/180806/BbcGd6AHC2.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/180806/0lcgLBK2el.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/180806/3LaBAB5Ec5.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/180806/mcE43Lc9LJ.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/180807/jl551k96fJ.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/180806/jjG232475A.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/180807/I9a8mJi25f.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/180807/8mkI0deEhD.png?imageslim">
+<meta property="og:updated_time" content="2019-06-17T14:24:32.178Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="单一指数模型">
 <meta name="twitter:description" content="算法优化">
-<meta name="twitter:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180806/dH9Lg6kkA9.png?imageslim">
+<meta name="twitter:image" content="http://www.doublure.cn/blog/180806/dH9Lg6kkA9.png?imageslim">
 
 
 
@@ -435,9 +435,9 @@
 <h2 id="CAPM模型的局限"><a href="#CAPM模型的局限" class="headerlink" title="CAPM模型的局限"></a>CAPM模型的局限</h2><p>前面我们在讲CAPM模型时，说到其公式反应了主要是系统风险，资产的超额收益完全是跟着市场走。  </p>
 <p>但是，我们知道市场里的不确定性简直太多了，仅仅靠一个β来说明未免有些牵强。最好还要有非系统性风险(firm specific)的体现。<br>另外，传统的计算资产组合收益的方法，需要计算资产两两组合的协方差。当资产数量上升后，需要计算的资产组合数量急剧上升，N个资产构成的组合P，要计算P的均值和方差需要计算<code>N(N-1)/2</code>次，也就是说，这种方法的计算复杂度为O(n2)。  </p>
 <p>单一指数模型，改善了上面两点。针对第一点，单一指数模型引入了非系统性风险，以及不受市场波动影响的部分。针对第二点，单一指数模型通过把市场指数和每项资产关联起来，相当于给每项资产之间架起了一个枢纽，这样可以大大减少了计算协方差矩阵的计算量。  </p>
-<h2 id="单一指数模型-Single-Index-Model"><a href="#单一指数模型-Single-Index-Model" class="headerlink" title="单一指数模型(Single Index Model)"></a>单一指数模型(Single Index Model)</h2><h3 id="单一资产方差的计算"><a href="#单一资产方差的计算" class="headerlink" title="单一资产方差的计算"></a>单一资产方差的计算</h3><p>这个模型中，资产的收益可以表达成下面的形式：<br><img src="http://pah1qyen2.bkt.clouddn.com/blog/180806/dH9Lg6kkA9.png?imageslim" alt="mark"></p>
+<h2 id="单一指数模型-Single-Index-Model"><a href="#单一指数模型-Single-Index-Model" class="headerlink" title="单一指数模型(Single Index Model)"></a>单一指数模型(Single Index Model)</h2><h3 id="单一资产方差的计算"><a href="#单一资产方差的计算" class="headerlink" title="单一资产方差的计算"></a>单一资产方差的计算</h3><p>这个模型中，资产的收益可以表达成下面的形式：<br><img src="http://www.doublure.cn/blog/180806/dH9Lg6kkA9.png?imageslim" alt="mark"></p>
 <p>如果用R表示超额收益，那么可以简写为：  </p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/180806/ElGlhc2j9i.png?imageslim" alt="mark"></p>
+<p><img src="http://www.doublure.cn/blog/180806/ElGlhc2j9i.png?imageslim" alt="mark"></p>
 <p>其中，</p>
 <ul>
 <li>α表示资产独立于市场波动的收益</li>
@@ -450,24 +450,24 @@
 <li>不同资产的e相互完全不相关</li>
 </ul>
 <p>在这种情况下，我们可以把一项资产看做是由α，Rm，以及e组成的资产组合。资产的方差就可以这样计算：  </p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/180806/BbcGd6AHC2.png?imageslim" alt="mark"></p>
+<p><img src="http://www.doublure.cn/blog/180806/BbcGd6AHC2.png?imageslim" alt="mark"></p>
 <p>这个公式就能看得出来，<code>总风险=系统风险+公司特定风险</code>  </p>
 <h3 id="协方差计算"><a href="#协方差计算" class="headerlink" title="协方差计算"></a>协方差计算</h3><p>如果要计算协方差，需要通过Rm这个中介来换算。  </p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/180806/0lcgLBK2el.png?imageslim" alt="mark"></p>
+<p><img src="http://www.doublure.cn/blog/180806/0lcgLBK2el.png?imageslim" alt="mark"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">r_&#123;i,m&#125;= \frac&#123;\sigma _&#123;i,m&#125;&#125;&#123;\sigma_&#123;i&#125;\sigma_&#123;m&#125;&#125; </span><br><span class="line"></span><br><span class="line">r_&#123;j,m&#125;= \frac&#123;\sigma _&#123;j,m&#125;&#125;&#123;\sigma_&#123;j&#125;\sigma_&#123;m&#125;&#125; </span><br><span class="line"></span><br><span class="line">\sigma _&#123;i,m&#125;=\beta_&#123;i&#125; \sigma _&#123;m&#125;^&#123;2&#125;  </span><br><span class="line"></span><br><span class="line">\sigma _&#123;j,m&#125;=\beta_&#123;j&#125; \sigma _&#123;m&#125;^&#123;2&#125;</span><br><span class="line"></span><br><span class="line">r_&#123;i,j&#125;= \frac&#123;\sigma _&#123;i,j&#125;&#125;&#123;\sigma_&#123;i&#125;\sigma_&#123;j&#125;&#125;</span><br></pre></td></tr></table></figure>
 <p>综合上面的公式，可以得到：  </p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/180806/3LaBAB5Ec5.png?imageslim" alt="mark"></p>
+<p><img src="http://www.doublure.cn/blog/180806/3LaBAB5Ec5.png?imageslim" alt="mark"></p>
 <p>于是，我们看到，知道了资产的β系数之后，再加上市场的方差，就可以很容易求出资产之间的协方差了。  </p>
 <h2 id="资产组合的收益与风险"><a href="#资产组合的收益与风险" class="headerlink" title="资产组合的收益与风险"></a>资产组合的收益与风险</h2><p>如果一个资产组合P里有N项资产，那么P的加权超额收益期望为：  </p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/180806/mcE43Lc9LJ.png?imageslim" alt="mark"></p>
+<p><img src="http://www.doublure.cn/blog/180806/mcE43Lc9LJ.png?imageslim" alt="mark"></p>
 <p>于是，我们可以得到组合P的β值为：  </p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/180807/jl551k96fJ.png?imageslim" alt="mark"></p>
+<p><img src="http://www.doublure.cn/blog/180807/jl551k96fJ.png?imageslim" alt="mark"></p>
 <p>如果n比较大，e的部分可以忽略不计，因此可以得到：</p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/180806/jjG232475A.png?imageslim" alt="mark">  </p>
+<p><img src="http://www.doublure.cn/blog/180806/jjG232475A.png?imageslim" alt="mark">  </p>
 <p>对于组合P的方差，可以这样计算：  </p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/180807/I9a8mJi25f.png?imageslim" alt="mark"></p>
+<p><img src="http://www.doublure.cn/blog/180807/I9a8mJi25f.png?imageslim" alt="mark"></p>
 <p>其中：  </p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/180807/8mkI0deEhD.png?imageslim" alt="mark"></p>
+<p><img src="http://www.doublure.cn/blog/180807/8mkI0deEhD.png?imageslim" alt="mark"></p>
 <p>当然，上面这个公式的得出基于不同公司的非系统风险相对独立。<br>我们可以看到，当n趋向于多时，非系统风险的方差贡献几乎为0，因此非系统风险得到了分散。  </p>
 <p>再极端一点，我们买入全部的市场组合，那么β就是1，P的方差就等于市场M的标准差。  </p>
 <p>有了单一指数模型之后，根据上面的公式，如果再要计算一个组合P的均值和方差，那么我们只需要：  </p>

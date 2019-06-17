@@ -92,14 +92,14 @@
 <meta property="og:site_name" content="Doublure的博客">
 <meta property="og:description" content="房奴必备">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180623/dkK69Ajbj0.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180623/EgJ0K132CG.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180623/FKf16HDEg4.png?imageslim">
-<meta property="og:updated_time" content="2018-06-23T12:56:47.998Z">
+<meta property="og:image" content="http://www.doublure.cn/blog/180623/dkK69Ajbj0.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/180623/EgJ0K132CG.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/180623/FKf16HDEg4.png?imageslim">
+<meta property="og:updated_time" content="2019-06-17T14:31:33.299Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="用Excel计算还款之理论基础">
 <meta name="twitter:description" content="房奴必备">
-<meta name="twitter:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180623/dkK69Ajbj0.png?imageslim">
+<meta name="twitter:image" content="http://www.doublure.cn/blog/180623/dkK69Ajbj0.png?imageslim">
 
 
 
@@ -444,7 +444,7 @@
 </ul>
 <p>以此类推，一直到最后一个月。  </p>
 <p>算一算我们就看出来了，等额本金法每个月的还款额是逐渐减少的。<br>每个月减少的数额实际上就是上个月偿还的本金额一个月所产生的利息。用上面的例子来计算，就是<code>4167*0.049/12=17</code>。  </p>
-<p>用Excel模拟计算出来的结果如下：<br><img src="http://pah1qyen2.bkt.clouddn.com/blog/180623/dkK69Ajbj0.png?imageslim" alt="mark"></p>
+<p>用Excel模拟计算出来的结果如下：<br><img src="http://www.doublure.cn/blog/180623/dkK69Ajbj0.png?imageslim" alt="mark"></p>
 <h2 id="等额本息"><a href="#等额本息" class="headerlink" title="等额本息"></a>等额本息</h2><p>等额本息的概念是：每期还款的数额是不变的。每期还款后，剩下的本金加上当期产生的利息作为一个整体继续计息。  </p>
 <blockquote>
 <p>这种方式就是利滚利  </p>
@@ -457,10 +457,10 @@
 <li>第n期还款x元，剩余欠款为 <code>p(1+r)^n - x(1+r)^(n-1) -x(1+r)^(n-2) - ... - x(1+r) -x</code></li>
 </ul>
 <p>到了第n期，剩余欠款就为0了，因此 p(1+r)^n - x(1+r)^(n-1) -x(1+r)^(n-2) - … - x(1+r) -x = 0<br>利用上面这个公式，以及等比公式求和公式，我们可以推导出：  </p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/180623/EgJ0K132CG.png?imageslim" alt="mark">  </p>
+<p><img src="http://www.doublure.cn/blog/180623/EgJ0K132CG.png?imageslim" alt="mark">  </p>
 <p>回到我们题目中的例子，如果采用等额本息的方法，每个月的还款额为：<code>1500000*0.049/12*(1+0.049/12)^360/((1+0.049/12)^360-1)=7691</code>    </p>
 <p>用Excel模拟出来的结果如下：   </p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/180623/FKf16HDEg4.png?imageslim" alt="mark"></p>
+<p><img src="http://www.doublure.cn/blog/180623/FKf16HDEg4.png?imageslim" alt="mark"></p>
 <h2 id="两种方法的比较"><a href="#两种方法的比较" class="headerlink" title="两种方法的比较"></a>两种方法的比较</h2><ul>
 <li>从实际还款总额来看的话，等额本金法比等额本息法要少。我们上面这个例子，等额本金最终所有还款额为260万，而等额本息的还款总额为286万  </li>
 <li>从每期还款数目来看的话，等额本金法最初的单期还款数额比等额本息要高很多，初期的资金压力会比较大，但其还款金额会随着时间递减</li>

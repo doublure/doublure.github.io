@@ -92,18 +92,18 @@
 <meta property="og:site_name" content="Doublure的博客">
 <meta property="og:description" content="SIM with Excel">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180806/ElGlhc2j9i.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180807/dcceaGHjdK.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180807/2meb6hCI7k.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180807/l0e3Hk3L1d.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180806/BbcGd6AHC2.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180806/3LaBAB5Ec5.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180807/6649G0L7h6.png?imageslim">
-<meta property="og:updated_time" content="2018-08-27T14:20:48.988Z">
+<meta property="og:image" content="http://www.doublure.cn/blog/180806/ElGlhc2j9i.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/180807/dcceaGHjdK.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/180807/2meb6hCI7k.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/180807/l0e3Hk3L1d.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/180806/BbcGd6AHC2.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/180806/3LaBAB5Ec5.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/180807/6649G0L7h6.png?imageslim">
+<meta property="og:updated_time" content="2019-06-17T14:22:51.970Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="单一指数模型的Excel实现">
 <meta name="twitter:description" content="SIM with Excel">
-<meta name="twitter:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180806/ElGlhc2j9i.png?imageslim">
+<meta name="twitter:image" content="http://www.doublure.cn/blog/180806/ElGlhc2j9i.png?imageslim">
 
 
 
@@ -428,7 +428,7 @@
 <h2 id="前文回顾"><a href="#前文回顾" class="headerlink" title="前文回顾"></a>前文回顾</h2><ul>
 <li>单一指数模型SIM  </li>
 </ul>
-<h2 id="Excel的实现"><a href="#Excel的实现" class="headerlink" title="Excel的实现"></a>Excel的实现</h2><p>我们说过，单一指数模型的公式是这样子的：<br><img src="http://pah1qyen2.bkt.clouddn.com/blog/180806/ElGlhc2j9i.png?imageslim" alt="mark"></p>
+<h2 id="Excel的实现"><a href="#Excel的实现" class="headerlink" title="Excel的实现"></a>Excel的实现</h2><p>我们说过，单一指数模型的公式是这样子的：<br><img src="http://www.doublure.cn/blog/180806/ElGlhc2j9i.png?imageslim" alt="mark"></p>
 <p>如果大家做过回归分析的话，就可以看出来，这个公式实际上就是最小二乘法进行的回归曲线。  </p>
 <p>于是，我们可以利用Excel的LINEST函数，来实现SIM法求协方差矩阵。  </p>
 <h3 id="求相关参数"><a href="#求相关参数" class="headerlink" title="求相关参数"></a>求相关参数</h3><p>我们在前面的公式知道，如果是要求协方差矩阵，只需要知道这么几项就可以：  </p>
@@ -437,23 +437,23 @@
 <li>市场组合的方差</li>
 </ul>
 <p>求资产的β和σ，可以使用LINEST函数，选定5*2的区域，进行线性回归：  </p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/180807/dcceaGHjdK.png?imageslim" alt="mark"></p>
+<p><img src="http://www.doublure.cn/blog/180807/dcceaGHjdK.png?imageslim" alt="mark"></p>
 <ul>
 <li>注意上图中的数据已经经过预先处理，定义好了名称区域</li>
 <li>使用数组公式进行LINEST求解</li>
 </ul>
-<p>得到的一个5*2的矩阵，每一个矩阵元素对应的是什么呢？<br><img src="http://pah1qyen2.bkt.clouddn.com/blog/180807/2meb6hCI7k.png?imageslim" alt="mark"></p>
+<p>得到的一个5*2的矩阵，每一个矩阵元素对应的是什么呢？<br><img src="http://www.doublure.cn/blog/180807/2meb6hCI7k.png?imageslim" alt="mark"></p>
 <p>我们可以看到，5*2矩阵中(1,1)位置就是β，(3,2)号位置是残差的标准差σ。  </p>
 <p>上面只是求了600825这个资产的β和残差的σ，如果想对每一个资产进行求解，需要配合使用INDEX函数。  </p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/180807/l0e3Hk3L1d.png?imageslim" alt="mark"></p>
+<p><img src="http://www.doublure.cn/blog/180807/l0e3Hk3L1d.png?imageslim" alt="mark"></p>
 <p>最后使用VAR函数，求出市场的方差。  </p>
 <h3 id="求协方差矩阵"><a href="#求协方差矩阵" class="headerlink" title="求协方差矩阵"></a>求协方差矩阵</h3><p>有了上面这些数据，我们就可以计算协方差矩阵了。</p>
 <p>在对角线位置，使用这个公式：</p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/180806/BbcGd6AHC2.png?imageslim" alt="mark">  </p>
+<p><img src="http://www.doublure.cn/blog/180806/BbcGd6AHC2.png?imageslim" alt="mark">  </p>
 <p>在其他位置，使用下面这个公式，并结合HLookup函数：</p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/180806/3LaBAB5Ec5.png?imageslim" alt="mark"></p>
+<p><img src="http://www.doublure.cn/blog/180806/3LaBAB5Ec5.png?imageslim" alt="mark"></p>
 <p>最后得到协方差矩阵为：</p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/180807/6649G0L7h6.png?imageslim" alt="mark"></p>
+<p><img src="http://www.doublure.cn/blog/180807/6649G0L7h6.png?imageslim" alt="mark"></p>
 
       
     </div>
