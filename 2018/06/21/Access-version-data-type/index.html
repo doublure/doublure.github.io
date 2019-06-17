@@ -92,14 +92,14 @@
 <meta property="og:site_name" content="Doublure的博客">
 <meta property="og:description" content="Access的2016版到底经历了什么？">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180621/FJc7mJGKb0.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180621/jhfjdHjCCk.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180621/3hAfah8gC6.png?imageslim">
-<meta property="og:updated_time" content="2018-06-21T13:33:27.243Z">
+<meta property="og:image" content="http://www.doublure.cn/blog/180621/FJc7mJGKb0.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/180621/jhfjdHjCCk.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/180621/3hAfah8gC6.png?imageslim">
+<meta property="og:updated_time" content="2019-06-17T14:09:14.116Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="同样的Access，不一样的数据类型">
 <meta name="twitter:description" content="Access的2016版到底经历了什么？">
-<meta name="twitter:image" content="http://pah1qyen2.bkt.clouddn.com/blog/180621/FJc7mJGKb0.png?imageslim">
+<meta name="twitter:image" content="http://www.doublure.cn/blog/180621/FJc7mJGKb0.png?imageslim">
 
 
 
@@ -424,16 +424,16 @@
 <p>最近算是和<code>ACCESS</code>彻底杠上了。  </p>
 <p>其实我一般是不太喜欢用<code>ACCESS</code>的，因为自己不是专门做数据库的，用<code>ACCESS</code>总有一种杀鸡用牛刀的感觉。  </p>
 <p>不过最近做一个项目，指定要用<code>ACCESS</code>。于是在自己的私人电脑上做了一个小的demo文件。<br>然而，这个文件拷贝到公司电脑上，打开时却报错了：  </p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/180621/FJc7mJGKb0.png?imageslim" alt="mark"></p>
+<p><img src="http://www.doublure.cn/blog/180621/FJc7mJGKb0.png?imageslim" alt="mark"></p>
 <p>看这个报错，貌似是因为公司电脑的<code>ACCESS</code>版本不够高？查看了一下公司电脑的版本，已经是2016版了。难道还有比2016版还要高的版本？ </p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/180621/jhfjdHjCCk.png?imageslim" alt="mark">  </p>
+<p><img src="http://www.doublure.cn/blog/180621/jhfjdHjCCk.png?imageslim" alt="mark">  </p>
 <p>还是老套路，到<code>MSDN</code>上面搜一个报错关键词，查到<a href="https://support.microsoft.com/en-gb/help/3208802/database-you-are-trying-to-open-requires-a-newer-version-of-microsoft" target="_blank" rel="noopener">这个页面</a>，里面提到：  </p>
 <blockquote>
 <p>This issue occurs if you try to open a database that contains a table that uses the BigInt data type. BigInt support was added to Access 2016. BigInt appears within the table’s data type as Large Number.</p>
 </blockquote>
 <p>也就是说，<code>ACCESS</code>2016版里新增了一个数据类型叫<code>BigInt</code>。如果用以前的<code>ACCESS</code>版本来打开含有<code>BigInt</code>类型的文件，就会报错。   </p>
 <p>那么问题来了，我的公司电脑已经是2016版的，里面有没有<code>Large Number</code>这个数据类型呢？看了一下，居然没有！为什么呢？</p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/180621/3hAfah8gC6.png?imageslim" alt="mark">  </p>
+<p><img src="http://www.doublure.cn/blog/180621/3hAfah8gC6.png?imageslim" alt="mark">  </p>
 <p>还有一点：<code>MSDN</code>里说，如果要打开的表格里使用了<code>BigInt</code>这个类型才会报错，可是我的原始文件里也没有用到这个数据类型，为什么也会报错呢？  </p>
 <p>这两个问题始终没有得到答案。最后的处理方式是：把私人电脑里的<code>ACCESS</code>数据导出为Excel文件，然后导入到公司电脑上。这也算是一种曲线救国的方式了。  </p>
 

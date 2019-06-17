@@ -92,14 +92,14 @@
 <meta property="og:site_name" content="Doublure的博客">
 <meta property="og:description" content="终于可以知道每个月几号发工资了">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/181007/AJaaJ5AAhe.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/181007/CE5k4JIa26.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/181007/cdC21G7J8H.png?imageslim">
-<meta property="og:updated_time" content="2018-10-12T15:22:17.833Z">
+<meta property="og:image" content="http://www.doublure.cn/blog/181007/AJaaJ5AAhe.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/181007/CE5k4JIa26.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/181007/cdC21G7J8H.png?imageslim">
+<meta property="og:updated_time" content="2019-06-17T14:09:52.486Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算每月的最后一个工作日">
 <meta name="twitter:description" content="终于可以知道每个月几号发工资了">
-<meta name="twitter:image" content="http://pah1qyen2.bkt.clouddn.com/blog/181007/AJaaJ5AAhe.png?imageslim">
+<meta name="twitter:image" content="http://www.doublure.cn/blog/181007/AJaaJ5AAhe.png?imageslim">
 
 
 
@@ -427,16 +427,16 @@
 <p>比如说，给定一个日期2007年3月8号，然后求3月8号之后第一个工作日的日期。  </p>
 <p>具体的语法是：<br><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Workday(start_date, days, [holidays])</span><br><span class="line">-<span class="ruby"> start_date就是给定的日期</span></span><br><span class="line"><span class="ruby">- days就是给定日期之前（之后）工作日的天数</span></span><br><span class="line"><span class="ruby">- holidays是可选参数，是一个表示假日的区域引用</span></span><br></pre></td></tr></table></figure></p>
 <p>例如，上面的这个例子，就可以这样来写：  </p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/181007/AJaaJ5AAhe.png?imageslim" alt="mark"></p>
+<p><img src="http://www.doublure.cn/blog/181007/AJaaJ5AAhe.png?imageslim" alt="mark"></p>
 <p>如果需要把节假日考虑进去，那么就需要加入holiday参数。  </p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/181007/CE5k4JIa26.png?imageslim" alt="mark"></p>
+<p><img src="http://www.doublure.cn/blog/181007/CE5k4JIa26.png?imageslim" alt="mark"></p>
 <h2 id="当月最后一个工作日的思路"><a href="#当月最后一个工作日的思路" class="headerlink" title="当月最后一个工作日的思路"></a>当月最后一个工作日的思路</h2><p>整体思路框架是：  </p>
 <ul>
 <li>获取下个月第一天（使用Date函数）</li>
 <li>然后用Workday,指定下个月第一天前一个工作日</li>
 <li>剔除节假日</li>
 </ul>
-<p>这里需要用Date函数，配合Year, Month函数来构建下个月的第一天，然后向前数一个工作日。<br><img src="http://pah1qyen2.bkt.clouddn.com/blog/181007/cdC21G7J8H.png?imageslim" alt="mark"></p>
+<p>这里需要用Date函数，配合Year, Month函数来构建下个月的第一天，然后向前数一个工作日。<br><img src="http://www.doublure.cn/blog/181007/cdC21G7J8H.png?imageslim" alt="mark"></p>
 <p>这样，就可以实现前面的需求了！</p>
 
       
