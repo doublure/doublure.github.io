@@ -93,19 +93,19 @@
 <meta property="og:description" content="表格法模拟线性回归">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://www.doublure.cn/blog/181011/Ame5ai9idk.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/181011/lbdb67m0L3.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/181011/cm4eg1kCb0.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/181011/IK2DGck2ii.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/181011/f960KI0GkB.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/181011/5mBA2l78EH.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/181011/1lffG2bCjb.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/181011/Fl1lllcF58.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/181011/4Ck9bL2cjB.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/181012/H5Eik8eebL.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/181012/deA5d29FDk.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/181012/mJCf3Bi5GB.png?imageslim">
-<meta property="og:image" content="http://pah1qyen2.bkt.clouddn.com/blog/181012/11iA5IdE55.png?imageslim">
-<meta property="og:updated_time" content="2019-01-06T17:35:54.162Z">
+<meta property="og:image" content="http://www.doublure.cn/blog/181011/lbdb67m0L3.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/181011/cm4eg1kCb0.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/181011/IK2DGck2ii.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/181011/f960KI0GkB.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/181011/5mBA2l78EH.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/181011/1lffG2bCjb.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/181011/Fl1lllcF58.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/181011/4Ck9bL2cjB.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/181012/H5Eik8eebL.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/181012/deA5d29FDk.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/181012/mJCf3Bi5GB.png?imageslim">
+<meta property="og:image" content="http://www.doublure.cn/blog/181012/11iA5IdE55.png?imageslim">
+<meta property="og:updated_time" content="2019-06-17T14:15:03.580Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SIMPLEX线性回归算法">
 <meta name="twitter:description" content="表格法模拟线性回归">
@@ -444,44 +444,44 @@
 <h3 id="加入松弛变量"><a href="#加入松弛变量" class="headerlink" title="加入松弛变量"></a>加入松弛变量</h3><p>题目给出了几个不等式，在求解之前，先要添加一些辅助参数，把不等式变成等式。  </p>
 <p>由于限制条件里有3个方程，因此需要添加3个辅助变量，这3个辅助变量都大于等于0，我们把它分别叫做s1,s2,s3</p>
 <p>这3个变量再加上本身就有的x1, x2,我们就得到了这样一个矩阵形式：  </p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/181011/lbdb67m0L3.png?imageslim" alt="mark"></p>
+<p><img src="http://www.doublure.cn/blog/181011/lbdb67m0L3.png?imageslim" alt="mark"></p>
 <p>要优化的目标可以表达成这样的向量形式：  </p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/181011/cm4eg1kCb0.png?imageslim" alt="mark"></p>
+<p><img src="http://www.doublure.cn/blog/181011/cm4eg1kCb0.png?imageslim" alt="mark"></p>
 <blockquote>
 <p>我们把目标向量叫做cj</p>
 </blockquote>
 <h3 id="构建迭代表格"><a href="#构建迭代表格" class="headerlink" title="构建迭代表格"></a>构建迭代表格</h3><p>Simplex是通过矩阵不断迭代运算得到最终优化结果的，在这里需要一个迭代表格。这个表格长的这样子：  </p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/181011/IK2DGck2ii.png?imageslim" alt="mark"></p>
+<p><img src="http://www.doublure.cn/blog/181011/IK2DGck2ii.png?imageslim" alt="mark"></p>
 <p>这里面有几个点：  </p>
 <ul>
 <li>basic variable最开始要设置为前面加入的松弛变量s1,s2,s3，后面，随着迭代的进行，这3个变量会逐步被替换掉</li>
 <li>cbi对应的是每个变量在cj中对应的系数。例如，s1,s2,s3在cj中都是0，因此cbi这里都是0</li>
-<li>zj是cbi这个向量和每一个 variable所对应的列，作矩阵相乘运算，得到的结果。下面这个图显示的是x1变量对应的列和cbi相乘的结果。<br><img src="http://pah1qyen2.bkt.clouddn.com/blog/181011/f960KI0GkB.png?imageslim" alt="mark"></li>
+<li>zj是cbi这个向量和每一个 variable所对应的列，作矩阵相乘运算，得到的结果。下面这个图显示的是x1变量对应的列和cbi相乘的结果。<br><img src="http://www.doublure.cn/blog/181011/f960KI0GkB.png?imageslim" alt="mark"></li>
 <li>最下面一行是cj-zj,也就是把两个矩阵相减。对于一个求最大值的问题，迭代停止的条件就是cj-zj所得到的矩阵每一个元素都小于等于0。</li>
 </ul>
 <h3 id="进行迭代"><a href="#进行迭代" class="headerlink" title="进行迭代"></a>进行迭代</h3><p>上面一张图我们看到，cj-zj这个矩阵，并不符合停止迭代的条件，于是要继续进行下一次迭代。  </p>
 <p>下一次迭代需要更换basic variable,换哪个呢？  </p>
 <ul>
-<li><p>我们查找上一次迭代中，cj-zj中最大的元素，也就是3：<br><img src="http://pah1qyen2.bkt.clouddn.com/blog/181011/5mBA2l78EH.png?imageslim" alt="mark"></p>
+<li><p>我们查找上一次迭代中，cj-zj中最大的元素，也就是3：<br><img src="http://www.doublure.cn/blog/181011/5mBA2l78EH.png?imageslim" alt="mark"></p>
 </li>
 <li><p>把3对应的这一列作标记</p>
 </li>
 <li><p>然后在上图表格中的ratio列，计算solution除以3这一列对应的值,我们求最小值，在这里也就是3.5</p>
 </li>
-<li>把最小值对应的一行作标记<br><img src="http://pah1qyen2.bkt.clouddn.com/blog/181011/1lffG2bCjb.png?imageslim" alt="mark"></li>
+<li>把最小值对应的一行作标记<br><img src="http://www.doublure.cn/blog/181011/1lffG2bCjb.png?imageslim" alt="mark"></li>
 <li>我们看到，标记的列，对应的是x2变量，标记的行，对应的是s2变量。</li>
-<li>于是，我们在basic variables中把s2去掉，x2加上,并且把x2在cj中对应的系数更新到cbi中，变成下面这个表格<br><img src="http://pah1qyen2.bkt.clouddn.com/blog/181011/Fl1lllcF58.png?imageslim" alt="mark"></li>
-<li>然后计算表格中各个变量对应的数值。对于新加入的x2变量，直接用原有数值，除以上一步中标记的行和列的交叉值（在这里是2）即可。<br><img src="http://pah1qyen2.bkt.clouddn.com/blog/181011/4Ck9bL2cjB.png?imageslim" alt="mark"></li>
-<li>对于上一次迭代就存在的变量(在这里是s1和s3),他们的值要用这样一个公式：<br>这里直接用图来表示吧：<br><img src="http://pah1qyen2.bkt.clouddn.com/blog/181012/H5Eik8eebL.png?imageslim" alt="mark"></li>
-<li>然后按照上面一次迭代中所讲的，计算cj-zj<br><img src="http://pah1qyen2.bkt.clouddn.com/blog/181012/deA5d29FDk.png?imageslim" alt="mark"><br>这里我们发现cj-zj中依旧有一个值大于0，对应x1变量，s3变量对应行的ratio最小，所以下一步就要把s3替换成s1.</li>
+<li>于是，我们在basic variables中把s2去掉，x2加上,并且把x2在cj中对应的系数更新到cbi中，变成下面这个表格<br><img src="http://www.doublure.cn/blog/181011/Fl1lllcF58.png?imageslim" alt="mark"></li>
+<li>然后计算表格中各个变量对应的数值。对于新加入的x2变量，直接用原有数值，除以上一步中标记的行和列的交叉值（在这里是2）即可。<br><img src="http://www.doublure.cn/blog/181011/4Ck9bL2cjB.png?imageslim" alt="mark"></li>
+<li>对于上一次迭代就存在的变量(在这里是s1和s3),他们的值要用这样一个公式：<br>这里直接用图来表示吧：<br><img src="http://www.doublure.cn/blog/181012/H5Eik8eebL.png?imageslim" alt="mark"></li>
+<li>然后按照上面一次迭代中所讲的，计算cj-zj<br><img src="http://www.doublure.cn/blog/181012/deA5d29FDk.png?imageslim" alt="mark"><br>这里我们发现cj-zj中依旧有一个值大于0，对应x1变量，s3变量对应行的ratio最小，所以下一步就要把s3替换成s1.</li>
 </ul>
 <h3 id="再进行一次迭代"><a href="#再进行一次迭代" class="headerlink" title="再进行一次迭代"></a>再进行一次迭代</h3><p>按照上面的步骤，重复一次迭代，得到下面结果：  </p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/181012/mJCf3Bi5GB.png?imageslim" alt="mark"></p>
+<p><img src="http://www.doublure.cn/blog/181012/mJCf3Bi5GB.png?imageslim" alt="mark"></p>
 <p>这次，cj-zj这个矩阵符合要求了，迭代停止。  </p>
 <p>答案在哪里呢？  </p>
 <p>迭代停止的时候，basic variables所对应的solution的值，就是这些变量的最优解。<br>basic variables里面没有的变量，也就是其他变量，都为0。  </p>
 <p>于是，有了变量的值，再加上变量的系数（cj矩阵），我们就可以计算出最终的优化值了。  </p>
-<p><img src="http://pah1qyen2.bkt.clouddn.com/blog/181012/11iA5IdE55.png?imageslim" alt="mark"></p>
+<p><img src="http://www.doublure.cn/blog/181012/11iA5IdE55.png?imageslim" alt="mark"></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>上面是一个照猫画虎的过程，原理后面需要做详细探讨。</p>
 
       
