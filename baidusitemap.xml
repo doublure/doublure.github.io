@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>https://doublure.github.io/2018/10/12/simplex-LP/</loc>
+    <lastmod>2019-08-23T11:03:24.111Z</lastmod>
+    <data>
+        <display>
+        <title>SIMPLEX线性回归算法</title>
+        <pubTime>2018-10-12T15:18:20.000Z</pubTime>
+        
+        <tag>线性回归</tag>
+         
+         
+           
+             
+              <breadCrumb title="Excel" url="https://doublure.github.io/categories/Excel/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://doublure.github.io/2018/10/12/workday/</loc>
     <lastmod>2019-08-23T10:44:14.516Z</lastmod>
     <data>
@@ -551,26 +571,6 @@
            
              
               <breadCrumb title="金融" url="https://doublure.github.io/categories/%E9%87%91%E8%9E%8D/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://doublure.github.io/2018/10/12/simplex-LP/</loc>
-    <lastmod>2019-06-17T14:15:03.580Z</lastmod>
-    <data>
-        <display>
-        <title>SIMPLEX线性回归算法</title>
-        <pubTime>2018-10-12T15:18:20.000Z</pubTime>
-        
-        <tag>线性回归</tag>
-         
-         
-           
-             
-              <breadCrumb title="Excel" url="https://doublure.github.io/categories/Excel/"/>
           
         </display>
     </data>
