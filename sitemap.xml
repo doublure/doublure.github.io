@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://doublure.github.io/2018/08/27/single-index-model/</loc>
+    <loc>https://doublure.github.io/2018/10/12/workday/</loc>
     
-    <lastmod>2019-08-23T10:34:47.488Z</lastmod>
+    <lastmod>2019-08-23T10:44:14.516Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://doublure.github.io/2018/07/31/capital-budgeting/</loc>
     
-    <lastmod>2019-06-17T14:33:21.186Z</lastmod>
+    <lastmod>2019-08-23T10:43:24.739Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://doublure.github.io/2018/08/27/single-index-model/</loc>
+    
+    <lastmod>2019-08-23T10:34:47.488Z</lastmod>
     
   </url>
   
@@ -180,13 +187,6 @@
     <loc>https://doublure.github.io/2018/10/12/simplex-LP/</loc>
     
     <lastmod>2019-06-17T14:15:03.580Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://doublure.github.io/2018/10/12/workday/</loc>
-    
-    <lastmod>2019-06-17T14:09:52.486Z</lastmod>
     
   </url>
   
