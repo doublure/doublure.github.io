@@ -95,7 +95,7 @@
 <meta property="og:image" content="http://www.doublure.cn/blog/181007/AJaaJ5AAhe.png?imageslim">
 <meta property="og:image" content="http://www.doublure.cn/blog/181007/CE5k4JIa26.png?imageslim">
 <meta property="og:image" content="http://www.doublure.cn/blog/181007/cdC21G7J8H.png?imageslim">
-<meta property="og:updated_time" content="2019-08-23T10:44:14.516Z">
+<meta property="og:updated_time" content="2019-08-23T14:18:43.517Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算每月的最后一个工作日">
 <meta name="twitter:description" content="终于可以知道每个月几号发工资了">
@@ -420,9 +420,9 @@
 
       
         <p>​    </p>
-<a id="more"></a>
 <p>最近碰到一个需求：给定了一个日期，要求当月最后一个工作日的日期。  </p>
 <p>谷歌了半天，发现Excel自带了一个Workday函数刚好可以解决这个问题。那Workday函数是怎么用的呢？  </p>
+<a id="more"></a>
 <h2 id="Workday的用法"><a href="#Workday的用法" class="headerlink" title="Workday的用法"></a>Workday的用法</h2><p>Workday的用途就是，给定一个日期，然后求这个日期指定数量工作日后（前）的日期。  </p>
 <p>比如说，给定一个日期2007年3月8号，然后求3月8号之后第一个工作日的日期。  </p>
 <p>具体的语法是：<br><figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Workday(start_date, days, [holidays])</span><br><span class="line">-<span class="ruby"> start_date就是给定的日期</span></span><br><span class="line"><span class="ruby">- days就是给定日期之前（之后）工作日的天数</span></span><br><span class="line"><span class="ruby">- holidays是可选参数，是一个表示假日的区域引用</span></span><br></pre></td></tr></table></figure></p>

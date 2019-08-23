@@ -4,14 +4,14 @@
 
     
   <url>
-    <loc>https://doublure.github.io/2018/10/12/simplex-LP/</loc>
-    <lastmod>2019-08-23T11:03:24.111Z</lastmod>
+    <loc>https://doublure.github.io/2018/10/12/workday/</loc>
+    <lastmod>2019-08-23T14:18:43.517Z</lastmod>
     <data>
         <display>
-        <title>SIMPLEX线性回归算法</title>
-        <pubTime>2018-10-12T15:18:20.000Z</pubTime>
+        <title>计算每月的最后一个工作日</title>
+        <pubTime>2018-10-12T15:18:32.000Z</pubTime>
         
-        <tag>线性回归</tag>
+        <tag>Excel函数</tag>
          
          
            
@@ -24,14 +24,14 @@
 
     
   <url>
-    <loc>https://doublure.github.io/2018/10/12/workday/</loc>
-    <lastmod>2019-08-23T10:44:14.516Z</lastmod>
+    <loc>https://doublure.github.io/2018/10/12/simplex-LP/</loc>
+    <lastmod>2019-08-23T11:03:24.111Z</lastmod>
     <data>
         <display>
-        <title>计算每月的最后一个工作日</title>
-        <pubTime>2018-10-12T15:18:32.000Z</pubTime>
+        <title>SIMPLEX线性回归算法</title>
+        <pubTime>2018-10-12T15:18:20.000Z</pubTime>
         
-        <tag>Excel函数</tag>
+        <tag>线性回归</tag>
          
          
            
