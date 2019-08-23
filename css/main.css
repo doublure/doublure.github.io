@@ -1618,6 +1618,14 @@ pre .javascript .function {
 .post:last-child .post-eof.post-eof.post-eof {
   display: none;
 }
+.posts-expand .post-eof {
+  display: block;
+  margin: 40px auto 30px;
+  width: 8%;
+  height: 1px;
+  background: #ccc;
+  text-align: center;
+}
 .post-gallery {
   display: table;
   table-layout: fixed;
@@ -1830,7 +1838,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #99f106;
+  background: #ffc6ff;
 }
 .links-of-blogroll {
   font-size: 13px;
